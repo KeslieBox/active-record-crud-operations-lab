@@ -31,18 +31,16 @@ def can_be_created_in_a_block(args = nil)
   # If no arguments are passed, use default values:
   # title == "Home Alone"
   # release_date == 1990
-  movie = nil
+  # movie = nil
   Movie.create.tap do |m|
-      if args == nil
-        m.title = "Home Alone"
-        m.release_date = 1990
-      else
-        movie = Movie.new(args)
-        m.title = movie.title
-        m.release_date = movie.release_date
-      end
-      m.title
-      m.release_date
+    if args == nil
+      m.title = "Home Alone"
+      m.release_date = 1990
+    else
+      movie = Movie.new(args)
+      m.title = movie.title
+      m.release_date = movie.release_date
+    end
   end
 end
 
